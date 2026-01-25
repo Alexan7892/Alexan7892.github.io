@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.6d24c51a.css",
-    "main.js": "/static/js/main.694b606d.js",
+    "main.js": "/static/js/main.b2659d52.js",
     "static/js/453.84d4e597.chunk.js": "/static/js/453.84d4e597.chunk.js",
     "static/media/metalurgie.jpg": "/static/media/metalurgie.9232f63c23bd87340961.jpg",
     "index.html": "/index.html",
     "main.6d24c51a.css.map": "/static/css/main.6d24c51a.css.map",
-    "main.694b606d.js.map": "/static/js/main.694b606d.js.map",
+    "main.b2659d52.js.map": "/static/js/main.b2659d52.js.map",
     "453.84d4e597.chunk.js.map": "/static/js/453.84d4e597.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6d24c51a.css",
-    "static/js/main.694b606d.js"
+    "static/js/main.b2659d52.js"
   ]
 }
