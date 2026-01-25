@@ -4,37 +4,26 @@
     <meta charset="utf-8">
     <title>МеталлСтрой</title>
     <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      // This script takes the current url and converts the path and query
-      // string into just a query string, and then redirects the browser
-      // to the new url with only a query string and hash fragment,
-      // e.g. https://www.foo.tld/one/two?a=b&c=d#qwe, becomes
-      // https://www.foo.tld/?/one/two&a=b~and~c=d#qwe
-      // Note: this 404.html file must be at least 512 bytes for it to work
-      // with Internet Explorer (it is currently > 512 bytes)
-
-      // If you're creating a Project Pages site and NOT using a custom domain,
-      // then set pathSegmentsToKeep to 1 (enterprise users may need to set it to > 1).
-      // This way the code will only replace the route part and not the real directory.
+      // GitHub Pages SPA redirect
       var pathSegmentsToKeep = 1;
-
       var l = window.location;
-      var pathname = l.pathname.split('/').slice(1 + pathSegmentsToKeep).join('/');
       
-      // Only redirect if there's actually a path to redirect and it's not already a redirect
-      if (pathname && !l.search.includes('/?/')) {
-        l.replace(
-          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-          l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-          pathname.replace(/&/g, '~and~') +
-          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-          l.hash
-        );
+      // Get the path after the repo name
+      var pathArray = l.pathname.split('/');
+      var repoName = pathArray[1]; // This should be empty for user pages
+      var routePath = pathArray.slice(pathSegmentsToKeep + 1).join('/');
+      
+      if (routePath) {
+        // Redirect to index.html with the route as a query parameter
+        var newUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + 
+                    '/' + (repoName ? repoName + '/' : '') + '?p=/' + routePath +
+                    (l.search ? '&' + l.search.slice(1) : '') + l.hash;
+        
+        l.replace(newUrl);
       }
     </script>
   </head>
   <body>
+    <p>Перенаправление...</p>
   </body>
 </html>
